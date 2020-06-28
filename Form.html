@@ -8,18 +8,18 @@
 		<font face="impact" size="5">FORM MINAT & BAKAT</font><br>
 		<font face="impact" size="5">MAHASISWA FTI</font>
 	</center>
-		<form>
+		<form action="form_welcome.php" method="post">
 			<div>
 				<table>
 					<tr>
 						<td>NAMA</td>
 						<td>:</td>
-						<td><input type="text" placeholder="Nama Lengkap" size="50"></td>
+						<td><input type="text" name="nama" placeholder="Nama Lengkap" size="50"></td>
 					</tr>
 					<tr>
 						<td>NIM</td>
 						<td>:</td>
-						<td><input type="text" placeholder="NIM" size="20"></td>
+						<td><input type="text" name="nim" placeholder="NIM" size="20"></td>
 					</tr>
 					<tr>
 						<td>JENIS KELAMIN</td>
@@ -30,44 +30,25 @@
 					<tr>
 						<td>ALAMAT</td>
 						<td>:</td>
-						<td><input type="text" placeholder="Alamat Lengkap" size="50"></td>
+						<td><input type="text" name="alamat" placeholder="Alamat Lengkap" size="50"></td>
 					</tr>
 					<tr>
 						<td>No. Telp/WA</td>
 						<td>:</td>
-						<td><input type="text" placeholder="+62" size="20"></td>
+						<td><input type="text" name="telp" placeholder="+62" size="20"></td>
 					</tr>
 					<tr>
 						<td>PROGRAM STUDI</td>
 						<td>:</td>
-						<td><select>
-							<option value="tif">TEKNIK INFORMATIKA</option>
-							<option value="ti">TEKNIK INDUSTRI</option>
-							<option value="tp">TEKNOLOGI PANGAN</option>
-							<option value="te">TEKNIK ELEKTRO</option>
-							<option value="tk">TEKNIK KIMIA</option>
-						</select></td>
+						<td><input type="text" name="prodi" size="20"></td>
 					</tr>
 					<tr>
 						<td>MINAT & BAKAT</td>
 						<td>:</td>
-						<td><input type="checkbox" name="">SEPAK BOLA
-							<input type="checkbox" name="">VOLI
-							<input type="checkbox" name="">BADMINTON
-							<input type="checkbox" name="">BELA DIRI
-						</td>
+						<td><input type="tetx" name="bakat" size="30"></td>
 					</tr>
-					<tr><td>&nbsp</td><td>&nbsp</td>
-						<td>
-							<input type="checkbox" name="">PADUAN SUARA
-							<input type="checkbox" name="">TARI
-							<input type="checkbox" name="">CATUR
-							<input type="checkbox" name="">E-SPORT
-						</td>
-					</tr>
-					<tr><td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
-					<td><button type="submit">SIMPAN</button>
-						<button type="reset">BATAL</button>
+					<td><button type="submit" name="simpan">SIMPAN</button>
+						<button type="reset" name="reset">BATAL</button>
 					</td>
 				</table>
 			</div>
