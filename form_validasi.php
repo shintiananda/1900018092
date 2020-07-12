@@ -4,12 +4,15 @@
 	<style>
 		.error {color: #FF0000;}
 	</style>
+	<link rel="stylesheet" type="text/css" href="form_validasi.css">
 </head>
 <body>
 
+
+<!-- validasi -->
 <?php
-	$nama = $nim = $jk = $alamat = $telp = $prodi = $bakat = "";
-	$namaErr = $nimErr = $jkErr = $alamatErr = $telpErr = $prodiErr = "";
+	$nama = $nim = $jk = $alamat = $telp = $prodi = $minat = "";
+	$namaErr = $nimErr = $jkErr = $alamatErr = $telpErr = $prodiErr = $minatErr = "";
 
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -48,64 +51,62 @@
 		} else {
     		$prodi = test_input($_POST["prodi"]);
   		}
-  		if (empty($_POST["bakat"])) {
-   			$bakat = "";
+  		if (empty($_POST["minat"])) {
+   			$minat = "Minat & Bakat wajib diisi";
   		} else {
-    		$bakat = test_input($_POST["bakat"]);
+    		$minatErr = test_input($_POST["minat"]);
   	}
 }
 
-	function test_input($data) {
-	$data = trim($data);
-  	$data = stripslashes($data);
-  	$data = htmlspecialchars($data);
-  	return $data;
+	function test_input($input) {
+	$input = trim($input);
+  	$input = stripslashes($input);
+  	$input = htmlspecialchars($input);
+  	return $input;
 }
 ?>
 
-<h2>FORM VALIDASI</h2>
+
+<nav>
+	<div class="name">
+		<h2>FORM VALIDASI</h2>
+	</div>
+</nav>
+<div class="box">
+	
 <p><span class="error">* wajib diisi</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-	Nama 	: <br><input type="text" name="nama" value="<?php echo $nama; ?>">
-	<span class="error">* <?php echo $namaErr;?></span>
+<form method="post" action="proses_fix.php">
+	<label>Nama 	</label><span class="error">* <?php echo $namaErr;?></span><br>
+	<input type="text" name="nama" value="<?php echo $nama; ?>" class="form">
+	
   	<br><br>
-  	NIM 	: <br><input type="number" name="nim" value="<?php echo $nim; ?>" >
-  	<span class="error">* <?php echo $nimErr;?></span>
+  	<label>NIM 	</label><span class="error">* <?php echo $nimErr;?></span><br>
+  	<input type="number" name="nim" value="<?php echo $nim; ?>" class="form">
+  	
   	<br><br>
-  	Jenis Kelamin 	: <br>
-  		<input type="radio" name="jk" <?php if(isset($jk) && $jk == "perempuan") echo "checked"; ?> value="Perempuan"> Perempuan
-  		<input type="radio" name="jk" <?php if(isset($jk) && $jk == "laki-laki") echo "checked"; ?> value="Laki=laki"> Laki-laki
-  	<span class="error">* <?php echo $jkErr;?></span>
+  	<label>Jenis Kelamin 	</label><span class="error">* <?php echo $jkErr;?></span><br>
+  		<input type="radio" name="jk" <?php if(isset($jk) && $jk == "perempuan") echo "checked"; ?> value="Perempuan" > Perempuan
+  		<input type="radio" name="jk" <?php if(isset($jk) && $jk == "laki-laki") echo "checked"; ?> value="Laki-laki"> Laki-laki
+  	
   	<br><br>
-  	Alamat 	: <br><textarea name="alamat" rows="5" cols="25"><?php echo "$alamat"; ?></textarea>
-  	<span class="error">* <?php echo $alamatErr;?></span>
+  	<label>Alamat 	</label><span class="error">* <?php echo $alamatErr;?></span><br>
+  	<textarea name="alamat" rows="5" cols="25" class="form"><?php echo "$alamat"; ?></textarea>
+  	
   	<br><br>
-  	Telp/WA 	: <br><input type="number" name="telp" value="<?php echo $telp; ?>">
-  	<span class="error">* <?php echo $telpErr;?></span>
+  	<label>Telp/WA 	</label><span class="error">* <?php echo $telpErr;?></span><br>
+  	<input type="number" name="telp" value="<?php echo $telp; ?>" class="form">
+  	
   	<br><br>
-  	Program Studi : <br><input type="text" name="prodi" value="<?php echo $prodi; ?>">
-  	<span class="error">* <?php echo $prodiErr;?></span>
+  	<label>Program Studi </label><span class="error">* <?php echo $prodiErr;?></span><br>
+  	<input type="text" name="prodi" value="<?php echo $prodi; ?>" class="form">
+  	
   	<br><br>
-  	Minat & Bakat 	: <br><input type="text" name="bakat" value="<?php echo $bakat; ?>">
+  	<label>Minat & Bakat 	</label><span class="error">* <?php echo $minatErr;?></span><br>
+  	<input type="text" name="minat" value="<?php echo $minat; ?>" class="form">
   	<br><br>
-  	<input type="submit" name="submit" value="Submit">
+  	<button name="submit">Submit</button>
 </form>
-<hr>
-<?php 
-	echo $nama;
-	echo "<br>";
-	echo $nim;
-	echo "<br>";
-	echo $jk;
-	echo "<br>";
-	echo $alamat;
-	echo "<br>";
-	echo $telp;
-	echo "<br>";
-	echo $prodi;
-	echo "<br>";
-	echo $bakat;
-?>
+</div>
 
 </body>
 </html>

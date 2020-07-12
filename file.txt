@@ -1,0 +1,5 @@
+NAMA|NIM|JENIS KELAMIN|ALAMAT|TELP|PRODI|MINAT&BAKAT 
+Shintia Ananda Susanto|1900018092|Perempuan|Belitung|081369636878|Teknik Informatika|Sepak Bola 9:13 PM 7/12/2020
+Rizka Dwijaya|1900018000|Perempuan|Belitung|08139872362|Akuntansi|Takraw
+Galih|1900018001|Laki-laki|Yogyakarta|0812097398|Teknik Sipil|Gambar
+ Zainal Abidin|1900018003|Laki-laki|Banjar|081959089267|Teknik Industri|Karate
